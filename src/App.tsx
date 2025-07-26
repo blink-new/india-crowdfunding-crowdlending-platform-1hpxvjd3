@@ -5,256 +5,235 @@ import { Input } from './components/ui/input';
 import { Label } from './components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './components/ui/select';
 import { Textarea } from './components/ui/textarea';
-import { Badge } from './components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
-import { 
-  TrendingUp, 
-  Users, 
-  Shield, 
-  ArrowRight, 
-  Building2, 
-  Banknote, 
-  BarChart3,
-  CheckCircle,
-  Star,
-  Globe,
-  Smartphone
-} from 'lucide-react';
+import { TrendingUp, Users, Building2, ArrowRight, Shield, Globe, Star } from 'lucide-react';
 
 function App() {
   const [activeTab, setActiveTab] = useState('investor');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold text-gray-900">InvestIndia</span>
-            </div>
-            <nav className="hidden md:flex space-x-8">
-              <a href="#features" className="text-gray-600 hover:text-primary transition-colors">Features</a>
-              <a href="#how-it-works" className="text-gray-600 hover:text-primary transition-colors">How it Works</a>
-              <a href="#about" className="text-gray-600 hover:text-primary transition-colors">About</a>
-              <Button variant="outline" size="sm">Sign In</Button>
-            </nav>
+    <div className="min-h-screen bg-black text-white">
+      {/* Navigation */}
+      <nav className="flex items-center justify-between px-6 py-4 border-b border-gray-800">
+        <div className="flex items-center space-x-2">
+          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <TrendingUp className="w-5 h-5 text-black" />
           </div>
+          <span className="text-xl font-bold">InvestIndia</span>
         </div>
-      </header>
+        <div className="hidden md:flex items-center space-x-8">
+          <a href="#" className="text-gray-300 hover:text-white transition-colors">Home</a>
+          <a href="#" className="text-gray-300 hover:text-white transition-colors">About Us</a>
+          <a href="#" className="text-gray-300 hover:text-white transition-colors">Markets</a>
+          <a href="#" className="text-gray-300 hover:text-white transition-colors">Support</a>
+        </div>
+        <Button className="bg-primary text-black hover:bg-primary/90 font-semibold px-6">
+          Login
+        </Button>
+      </nav>
 
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="mb-8">
-            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
-              🇮🇳 Made for India
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              India's Premier
-              <span className="text-primary block">Crowdfunding Platform</span>
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Invest in India's most promising startups, trade on our secondary market, 
-              and access venture debt opportunities. All in one comprehensive platform.
-            </p>
-          </div>
+      <section className="relative px-6 py-24 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            The Future of <br />
+            <span className="text-primary">Investment</span> is Here
+          </h1>
+          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Experience the power of India's next-generation crowdfunding platform. 
+            Access equity investments, secondary markets, and venture debt opportunities.
+          </p>
+          <Button 
+            size="lg" 
+            className="bg-primary text-black hover:bg-primary/90 font-semibold px-8 py-4 text-lg rounded-full"
+          >
+            Start Investing Now
+          </Button>
+        </div>
+      </section>
 
-          {/* Feature Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Card className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
+      {/* Features Section */}
+      <section className="px-6 py-16 bg-gray-900/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Three Ways to Grow Your Wealth</h2>
+            <p className="text-gray-400 text-lg">Choose your investment strategy and start building your portfolio</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-gray-800/50 border-gray-700 hover:border-primary/50 transition-all duration-300">
               <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                  <TrendingUp className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle className="text-white">Equity Crowdfunding</CardTitle>
+                <CardDescription className="text-gray-400">
+                  Invest in promising startups and high-growth companies
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li>• Minimum investment from ₹10,000</li>
+                  <li>• Equity ownership in startups</li>
+                  <li>• Potential for high returns</li>
+                  <li>• Diversified portfolio options</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gray-800/50 border-gray-700 hover:border-primary/50 transition-all duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="w-6 h-6 text-primary" />
+                </div>
+                <CardTitle className="text-white">Secondary Market</CardTitle>
+                <CardDescription className="text-gray-400">
+                  Trade your investments with other investors for liquidity
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li>• Buy and sell existing investments</li>
+                  <li>• Real-time market pricing</li>
+                  <li>• Enhanced liquidity options</li>
+                  <li>• Transparent trading platform</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gray-800/50 border-gray-700 hover:border-primary/50 transition-all duration-300">
+              <CardHeader>
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
                   <Building2 className="w-6 h-6 text-primary" />
                 </div>
-                <CardTitle className="text-lg">Equity Crowdfunding</CardTitle>
+                <CardTitle className="text-white">Venture Debt</CardTitle>
+                <CardDescription className="text-gray-400">
+                  Provide debt financing to growing companies
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">Invest in early-stage startups and become a shareholder in India's next unicorns.</p>
+                <ul className="space-y-2 text-sm text-gray-300">
+                  <li>• Fixed returns with lower risk</li>
+                  <li>• 12-24% annual returns</li>
+                  <li>• Secured lending options</li>
+                  <li>• Regular interest payments</li>
+                </ul>
               </CardContent>
             </Card>
-
-            <Card className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <BarChart3 className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-lg">Secondary Market</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Trade your investments for liquidity before traditional exit events.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Banknote className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-lg">Venture Debt</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Access crowdlending opportunities with fixed returns and lower risk profiles.</p>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-3">
-              Start Investing Today
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-3">
-              List Your Startup
-            </Button>
           </div>
         </div>
       </section>
 
-      {/* Registration Forms */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      {/* Registration Section */}
+      <section className="px-6 py-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Join InvestIndia</h2>
-            <p className="text-xl text-gray-600">Get started as an investor or list your startup</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Join the Platform</h2>
+            <p className="text-gray-400 text-lg">Get started as an investor or list your startup for funding</p>
           </div>
 
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-8">
-              <TabsTrigger value="investor" className="text-lg py-3">
-                <Users className="w-5 h-5 mr-2" />
-                I'm an Investor
+            <TabsList className="grid w-full grid-cols-2 bg-gray-800 mb-8">
+              <TabsTrigger value="investor" className="data-[state=active]:bg-primary data-[state=active]:text-black">
+                For Investors
               </TabsTrigger>
-              <TabsTrigger value="startup" className="text-lg py-3">
-                <Building2 className="w-5 h-5 mr-2" />
-                I'm a Startup
+              <TabsTrigger value="startup" className="data-[state=active]:bg-primary data-[state=active]:text-black">
+                For Startups
               </TabsTrigger>
             </TabsList>
 
-            {/* Investor Registration */}
             <TabsContent value="investor">
-              <Card>
+              <Card className="bg-gray-800/50 border-gray-700">
                 <CardHeader>
-                  <CardTitle className="text-2xl">Investor Registration</CardTitle>
-                  <CardDescription>
-                    Join thousands of investors backing India's most promising startups
+                  <CardTitle className="text-white">Investor Registration</CardTitle>
+                  <CardDescription className="text-gray-400">
+                    Start your investment journey with us
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="investor-name">Full Name *</Label>
-                      <Input id="investor-name" placeholder="Enter your full name" />
+                      <Label htmlFor="investor-name" className="text-white">Full Name</Label>
+                      <Input id="investor-name" placeholder="Enter your full name" className="bg-gray-700 border-gray-600 text-white" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="investor-email">Email Address *</Label>
-                      <Input id="investor-email" type="email" placeholder="your@email.com" />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="investor-phone">Phone Number *</Label>
-                      <Input id="investor-phone" placeholder="+91 98765 43210" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="investor-city">City *</Label>
-                      <Input id="investor-city" placeholder="Mumbai, Delhi, Bangalore..." />
+                      <Label htmlFor="investor-email" className="text-white">Email Address</Label>
+                      <Input id="investor-email" type="email" placeholder="Enter your email" className="bg-gray-700 border-gray-600 text-white" />
                     </div>
                   </div>
-
+                  
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="investment-range">Investment Range *</Label>
+                      <Label htmlFor="investor-phone" className="text-white">Phone Number</Label>
+                      <Input id="investor-phone" placeholder="+91 XXXXX XXXXX" className="bg-gray-700 border-gray-600 text-white" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="investment-range" className="text-white">Investment Range</Label>
                       <Select>
-                        <SelectTrigger>
+                        <SelectTrigger className="bg-gray-700 border-gray-600 text-white">
                           <SelectValue placeholder="Select investment range" />
                         </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="25k-1l">₹25,000 - ₹1,00,000</SelectItem>
-                          <SelectItem value="1l-5l">₹1,00,000 - ₹5,00,000</SelectItem>
-                          <SelectItem value="5l-25l">₹5,00,000 - ₹25,00,000</SelectItem>
-                          <SelectItem value="25l+">₹25,00,000+</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="investor-type">Investor Type *</Label>
-                      <Select>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select investor type" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="individual">Individual Investor</SelectItem>
-                          <SelectItem value="hni">High Net Worth Individual</SelectItem>
-                          <SelectItem value="family-office">Family Office</SelectItem>
-                          <SelectItem value="institutional">Institutional Investor</SelectItem>
+                        <SelectContent className="bg-gray-700 border-gray-600">
+                          <SelectItem value="10k-50k">₹10,000 - ₹50,000</SelectItem>
+                          <SelectItem value="50k-2l">₹50,000 - ₹2,00,000</SelectItem>
+                          <SelectItem value="2l-10l">₹2,00,000 - ₹10,00,000</SelectItem>
+                          <SelectItem value="10l+">₹10,00,000+</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="investment-interests">Investment Interests</Label>
-                    <Textarea 
-                      id="investment-interests" 
-                      placeholder="Tell us about your investment preferences, sectors of interest, risk appetite..."
-                      className="min-h-[100px]"
-                    />
+                    <Label htmlFor="investor-type" className="text-white">Investor Type</Label>
+                    <Select>
+                      <SelectTrigger className="bg-gray-700 border-gray-600 text-white">
+                        <SelectValue placeholder="Select investor type" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-gray-700 border-gray-600">
+                        <SelectItem value="individual">Individual Investor</SelectItem>
+                        <SelectItem value="hni">High Net Worth Individual</SelectItem>
+                        <SelectItem value="institutional">Institutional Investor</SelectItem>
+                        <SelectItem value="family-office">Family Office</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
 
-                  <Button className="w-full" size="lg">
+                  <Button className="w-full bg-primary text-black hover:bg-primary/90 font-semibold">
                     Register as Investor
-                    <ArrowRight className="ml-2 w-5 h-5" />
+                    <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </CardContent>
               </Card>
             </TabsContent>
 
-            {/* Startup Registration */}
             <TabsContent value="startup">
-              <Card>
+              <Card className="bg-gray-800/50 border-gray-700">
                 <CardHeader>
-                  <CardTitle className="text-2xl">Startup Registration</CardTitle>
-                  <CardDescription>
-                    List your startup and connect with investors across India
+                  <CardTitle className="text-white">Startup Registration</CardTitle>
+                  <CardDescription className="text-gray-400">
+                    List your startup and raise funding from our investor community
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="startup-name">Startup Name *</Label>
-                      <Input id="startup-name" placeholder="Your startup name" />
+                      <Label htmlFor="company-name" className="text-white">Company Name</Label>
+                      <Input id="company-name" placeholder="Enter company name" className="bg-gray-700 border-gray-600 text-white" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="founder-name">Founder Name *</Label>
-                      <Input id="founder-name" placeholder="Primary founder name" />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="founder-email">Email Address *</Label>
-                      <Input id="founder-email" type="email" placeholder="founder@startup.com" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="founder-phone">Phone Number *</Label>
-                      <Input id="founder-phone" placeholder="+91 98765 43210" />
+                      <Label htmlFor="founder-name" className="text-white">Founder Name</Label>
+                      <Input id="founder-name" placeholder="Enter founder name" className="bg-gray-700 border-gray-600 text-white" />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="sector">Sector *</Label>
+                      <Label htmlFor="sector" className="text-white">Sector</Label>
                       <Select>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select primary sector" />
+                        <SelectTrigger className="bg-gray-700 border-gray-600 text-white">
+                          <SelectValue placeholder="Select sector" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-gray-700 border-gray-600">
                           <SelectItem value="fintech">FinTech</SelectItem>
                           <SelectItem value="edtech">EdTech</SelectItem>
                           <SelectItem value="healthtech">HealthTech</SelectItem>
@@ -263,58 +242,50 @@ function App() {
                           <SelectItem value="mobility">Mobility</SelectItem>
                           <SelectItem value="foodtech">FoodTech</SelectItem>
                           <SelectItem value="agritech">AgriTech</SelectItem>
-                          <SelectItem value="cleantech">CleanTech</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="sub-sector">Sub-Sector *</Label>
-                      <Input id="sub-sector" placeholder="e.g., Digital Payments, Online Learning" />
+                      <Label htmlFor="sub-sector" className="text-white">Sub-Sector</Label>
+                      <Input id="sub-sector" placeholder="e.g., Digital Payments, Online Learning" className="bg-gray-700 border-gray-600 text-white" />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="funding-stage">Latest Funding Round *</Label>
+                      <Label htmlFor="funding-stage" className="text-white">Latest Funding Round</Label>
                       <Select>
-                        <SelectTrigger>
+                        <SelectTrigger className="bg-gray-700 border-gray-600 text-white">
                           <SelectValue placeholder="Select funding stage" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-gray-700 border-gray-600">
                           <SelectItem value="pre-seed">Pre-Seed</SelectItem>
                           <SelectItem value="seed">Seed</SelectItem>
                           <SelectItem value="series-a">Series A</SelectItem>
                           <SelectItem value="series-b">Series B</SelectItem>
                           <SelectItem value="series-c">Series C</SelectItem>
                           <SelectItem value="growth">Growth Stage</SelectItem>
-                          <SelectItem value="bootstrapped">Bootstrapped</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="funding-amount">Funding Amount Raised</Label>
-                      <Input id="funding-amount" placeholder="e.g., ₹50 Lakhs, ₹2 Crores" />
+                      <Label htmlFor="funding-amount" className="text-white">Funding Amount Sought</Label>
+                      <Input id="funding-amount" placeholder="₹ Amount in Lakhs" className="bg-gray-700 border-gray-600 text-white" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="startup-description">Startup Description *</Label>
+                    <Label htmlFor="company-description" className="text-white">Company Description</Label>
                     <Textarea 
-                      id="startup-description" 
-                      placeholder="Describe your startup, the problem you're solving, your solution, and traction..."
-                      className="min-h-[120px]"
+                      id="company-description" 
+                      placeholder="Describe your company, business model, and growth plans..."
+                      className="bg-gray-700 border-gray-600 text-white min-h-[100px]"
                     />
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="funding-goal">Current Funding Goal</Label>
-                    <Input id="funding-goal" placeholder="e.g., ₹1 Crore for 10% equity" />
-                  </div>
-
-                  <Button className="w-full" size="lg">
-                    Submit Startup Application
-                    <ArrowRight className="ml-2 w-5 h-5" />
+                  <Button className="w-full bg-primary text-black hover:bg-primary/90 font-semibold">
+                    Register Startup
+                    <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </CardContent>
               </Card>
@@ -323,99 +294,84 @@ function App() {
         </div>
       </section>
 
-      {/* Trust Indicators */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Trusted by Thousands</h2>
-            <p className="text-xl text-gray-600">Join India's fastest-growing investment community</p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-primary mb-2">₹500+ Cr</div>
-              <div className="text-gray-600">Total Investments</div>
+      {/* Trust Section */}
+      <section className="px-6 py-16 bg-gray-900/50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8">Trusted by Thousands</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-primary">₹500Cr+</div>
+              <div className="text-gray-400">Total Investments</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-primary mb-2">10,000+</div>
-              <div className="text-gray-600">Active Investors</div>
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-primary">10,000+</div>
+              <div className="text-gray-400">Active Investors</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-primary mb-2">500+</div>
-              <div className="text-gray-600">Funded Startups</div>
+            <div className="space-y-2">
+              <div className="text-3xl font-bold text-primary">500+</div>
+              <div className="text-gray-400">Funded Startups</div>
             </div>
-            <div>
-              <div className="text-3xl font-bold text-primary mb-2">25%</div>
-              <div className="text-gray-600">Average Returns</div>
-            </div>
-          </div>
-
-          {/* Compliance Badges */}
-          <div className="flex flex-wrap justify-center gap-4 mt-12">
-            <Badge variant="outline" className="px-4 py-2">
-              <Shield className="w-4 h-4 mr-2" />
-              SEBI Compliant
-            </Badge>
-            <Badge variant="outline" className="px-4 py-2">
-              <CheckCircle className="w-4 h-4 mr-2" />
-              RBI Approved
-            </Badge>
-            <Badge variant="outline" className="px-4 py-2">
-              <Star className="w-4 h-4 mr-2" />
-              ISO 27001 Certified
-            </Badge>
-            <Badge variant="outline" className="px-4 py-2">
-              <Globe className="w-4 h-4 mr-2" />
-              Made in India
-            </Badge>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <footer className="px-6 py-12 border-t border-gray-800">
+        <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <TrendingUp className="w-5 h-5 text-white" />
+                  <TrendingUp className="w-5 h-5 text-black" />
                 </div>
                 <span className="text-xl font-bold">InvestIndia</span>
               </div>
-              <p className="text-gray-400">
-                India's premier crowdfunding platform connecting investors with promising startups.
+              <p className="text-gray-400 text-sm">
+                India's leading crowdfunding platform for equity investments, secondary markets, and venture debt.
               </p>
             </div>
-            <div>
-              <h3 className="font-semibold mb-4">Platform</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Crowdfunding</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Secondary Market</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Venture Debt</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Portfolio</a></li>
-              </ul>
+            
+            <div className="space-y-4">
+              <h3 className="font-semibold text-white">Platform</h3>
+              <div className="space-y-2 text-sm text-gray-400">
+                <div>Equity Crowdfunding</div>
+                <div>Secondary Market</div>
+                <div>Venture Debt</div>
+                <div>Portfolio Management</div>
+              </div>
             </div>
-            <div>
-              <h3 className="font-semibold mb-4">Resources</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Investment Guide</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Legal</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-              </ul>
+            
+            <div className="space-y-4">
+              <h3 className="font-semibold text-white">Company</h3>
+              <div className="space-y-2 text-sm text-gray-400">
+                <div>About Us</div>
+                <div>Careers</div>
+                <div>Press</div>
+                <div>Contact</div>
+              </div>
             </div>
-            <div>
-              <h3 className="font-semibold mb-4">Contact</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>support@investindia.com</li>
-                <li>+91 80 4567 8900</li>
-                <li>Bangalore, India</li>
-              </ul>
+            
+            <div className="space-y-4">
+              <h3 className="font-semibold text-white">Legal</h3>
+              <div className="space-y-2 text-sm text-gray-400">
+                <div>Privacy Policy</div>
+                <div>Terms of Service</div>
+                <div>Risk Disclosure</div>
+                <div>Compliance</div>
+              </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 InvestIndia. All rights reserved. | Made with ❤️ in India</p>
+          
+          <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div className="text-sm text-gray-400">
+              © 2024 InvestIndia. All rights reserved.
+            </div>
+            <div className="flex items-center space-x-4 mt-4 md:mt-0">
+              <div className="flex items-center space-x-2 text-sm text-gray-400">
+                <Globe className="w-4 h-4" />
+                <span>Made in India</span>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
